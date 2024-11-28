@@ -1,18 +1,14 @@
 import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { App } from './App.tsx';
-import { store } from './redux/store/store.ts';
 
 const rootElement = document.getElementById('root');
 if (rootElement) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>,
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
   );
 } else {
   console.error("Элемент с идентификатором 'root' не найден в документе.");
